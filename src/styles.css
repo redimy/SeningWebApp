@@ -1,1 +1,97 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.main-container {
+  min-height: 100%;
+  min-width: 100%;
+  padding: 0;
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*Animations*/
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+/*Carousel*/
+
+ngb-carousel {
+  max-width: 100%;
+  margin: 0;
+  height: 100%;
+}
+
+ngb-carousel img {
+  width: 1000px;
+  height: auto !important;
+  outline: none;
+}
+
+ngb-carousel {
+  width: inherit;
+  height: inherit;
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-item {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
+  z-index: -1;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  z-index: 20;
+}
+
+.carousel-control-next {
+  z-index: 20;
+}
+
+.carousel-indicators {
+  z-index: 20;
+}

@@ -1,0 +1,115 @@
+<form
+  autocomplete="off"
+  (ngSubmit)="saveContact(formContact)"
+  #formContact="ngForm"
+>
+  <div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          type="text"
+          name="name"
+          placeholder="Nombre"
+          required
+          minlength="5"
+          [class.is-invalid]="name.invalid && name.touched"
+          [(ngModel)]="user.name"
+          #name="ngModel"
+        />
+        <small
+          *ngIf="name.invalid && name.touched"
+          class="form-text text-danger"
+          >Ingrese minimo 5 letras</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Empresa</label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          name="company"
+          type="text"
+          placeholder="Empresa"
+          minlength="5"
+          required
+          [(ngModel)]="user.company"
+          [class.is-invalid]="company.invalid && company.touched"
+          #company="ngModel"
+        />
+        <small
+          *ngIf="company.invalid && company.touched"
+          class="form-text text-danger"
+          >Ingrese minimo 5 letras</small
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Télefono</label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          type="number"
+          required
+          name="phone"
+          placeholder="Telefono"
+          [(ngModel)]="user.phone"
+          [class.is-invalid]="phone.invalid && phone.touched"
+          #phone="ngModel"
+        />
+        <small
+          *ngIf="phone.invalid && phone.touched"
+          class="form-text text-danger"
+          >Ingrese un número valido</small
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Correo</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="email"
+        name="email"
+        placeholder="Correo electrónico"
+        [(ngModel)]="user.email"
+        [class.is-invalid]="email.invalid && email.touched"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        required
+        #email="ngModel"
+      />
+      <small
+        *ngIf="email.invalid && email.touched"
+        class="form-text text-danger"
+        >El correo es obligatorio</small
+      >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Mensaje</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="text"
+        name="message"
+        placeholder="¡Dinos un poco acerca de tu proyecto!"
+        [(ngModel)]="user.description"
+        #message="ngModel"
+      />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary btn-block">
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>

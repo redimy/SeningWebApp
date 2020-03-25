@@ -19,7 +19,13 @@
     "@angular/platform-browser": "~8.2.11",
     "@angular/platform-browser-dynamic": "~8.2.11",
     "@angular/router": "~8.2.11",
+    "@ng-bootstrap/ng-bootstrap": "^2.2.2",
+    "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
+    "bootstrap": "^3.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
+    "sweetalert2": "^9.10.5",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
