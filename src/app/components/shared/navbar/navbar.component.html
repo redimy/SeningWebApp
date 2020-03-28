@@ -1,38 +1,140 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
-    <img
-      src="./docs/4.4/assets/brand/bootstrap-solid.svg"
-      width="30"
-      height="30"
-      class="d-inline-block align-top"
-      alt=""
-    />
-    Sening Studio
-  </a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
+<div>
+  <nav
+    class="navbar navbar-expand-lg fixed-top navbar-transparent"
+    color-on-scroll="500"
   >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['home']">
-          Home
-        </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['contact']">Contact</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['about']">About</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" routerLink="/home"> Sening Studio</a>
+        <button
+          class="navbar-toggler navbar-burger"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarToggler"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          (click)="sidebarToggle()"
+        >
+          <span class="navbar-toggler-bar"></span>
+          <span class="navbar-toggler-bar"></span>
+          <span class="navbar-toggler-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              rel="tooltip"
+              title="Like us on Facebook"
+              data-placement="bottom"
+              href="#"
+              target="_blank"
+            >
+              <i class="fa fa-facebook-square"></i>
+              <p class="d-lg-none">Facebook</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              rel="tooltip"
+              title="Follow us on Instagram"
+              data-placement="bottom"
+              href="#"
+              target="_blank"
+            >
+              <i class="fa fa-instagram"></i>
+              <p class="d-lg-none">Instagram</p>
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['home']">
+              Home
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['services']">
+              Services
+            </a>
+          </li>
+          <li class="nav-item " routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['contact']">Contact</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['about']">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--   <nav
+    class="navbar navbar-expand-lg navbar-dark bg-dark"
+    *ngIf="!isHome()"
+    color-on-scroll="500"
+  >
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" routerLink="/home"> Sening Studio</a>
+        <button
+          class="navbar-toggler navbar-burger"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarToggler"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          (click)="sidebarToggle()"
+        >
+          <span class="navbar-toggler-bar"></span>
+          <span class="navbar-toggler-bar"></span>
+          <span class="navbar-toggler-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              rel="tooltip"
+              title="Like us on Facebook"
+              data-placement="bottom"
+              href="#"
+              target="_blank"
+            >
+              <i class="fa fa-facebook-square"></i>
+              <p class="d-lg-none">Facebook</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              rel="tooltip"
+              title="Follow us on Instagram"
+              data-placement="bottom"
+              href="#"
+              target="_blank"
+            >
+              <i class="fa fa-instagram"></i>
+              <p class="d-lg-none">Instagram</p>
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['home']">
+              Home
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['contact']">Contact</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['about']">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+ -->
+</div>

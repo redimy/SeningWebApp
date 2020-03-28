@@ -13,7 +13,9 @@ import { Observable } from "rxjs";
 })
 export class ContactTemplateComponent implements OnInit {
   user: UserModel = new UserModel();
-
+  test: Date = new Date();
+  focus;
+  focus1;
   constructor(private usersService: UsersService) {}
 
   ngOnInit() {}

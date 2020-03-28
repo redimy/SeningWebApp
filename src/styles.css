@@ -1,22 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-
 .main-container {
   min-height: 100%;
   min-width: 100%;
   padding: 0;
+  margin: 0;
+}
+div.container.main-container {
+  padding: 0;
 }
 
-.carousel-item {
+body {
   height: 100vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
+/* Home images */
 
+.homeImg img {
+  width: 100%;
+  height: auto;
+}
 /*Animations*/
 
 .animated {
@@ -48,50 +49,112 @@
 }
 
 /*Carousel*/
-
-ngb-carousel {
-  max-width: 100%;
-  margin: 0;
-  height: 100%;
-}
-
-ngb-carousel img {
-  width: 1000px;
+.picsum-img-wrapper img {
   height: auto !important;
-  outline: none;
+  width: 100%;
+}
+ngb-carousel img {
+  background-color: #b2afab;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: 999px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
 }
 
-ngb-carousel {
-  width: inherit;
-  height: inherit;
+/*Pulsing Heart (footer)*/
+.heart {
+  color: #eb5e28;
+  animation: heathing 1s ease infinite;
+}
+@keyframes heathing {
+  0% {
+    transform: scale(0.75);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.75);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(0.75);
+  }
 }
 
-.carousel-inner {
-  overflow: visible;
+/* navbar */
+.nav-link {
+  font-size: 1.2em !important;
+}
+.nav-link i {
+  font-size: 1.2em !important;
+}
+.navbar-brand {
+  font-size: 1.2em !important;
+}
+.navbar {
+  color: white;
 }
 
-.carousel-item {
-  display: flex !important;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1.2s ease-in-out, visibility 1.2s;
-  z-index: -1;
+/*contactanos card*/
+.card .card-register {
+  width: 100%;
+  background-color: black;
 }
 
-.carousel-item.active {
+.form-group2 {
+  padding-top: 0px;
+  margin-top: -25px;
+}
+
+/*Clouds*/
+.fog-low {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: -35%;
+  margin-bottom: -50px;
+  width: 110%;
+  opacity: 0.85;
+}
+.fog-low img {
+  width: 100%;
+}
+.fog-low.right {
+  margin-left: 30%;
   opacity: 1;
-  visibility: visible;
-  z-index: 10;
+}
+.moving-clouds {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 250.625em;
+  height: 43.75em;
+  -webkit-animation: cloudLoop 80s linear infinite;
+  animation: cloudLoop 80s linear infinite;
 }
 
-.carousel-control-prev {
-  z-index: 20;
-}
-
-.carousel-control-next {
-  z-index: 20;
-}
-
-.carousel-indicators {
-  z-index: 20;
+@keyframes cloudLoop {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
 }

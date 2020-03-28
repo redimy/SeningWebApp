@@ -13,11 +13,16 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/shared/navbar/navbar.component";
 import { HomeComponent } from "./components/home/home.component";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AboutComponent } from "./components/about/about.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { ContactTemplateComponent } from "./components/shared/contactTemplate/contact-template/contact-template.component";
 import { CarouselComponent } from "./components/home/carousel/carousel.component";
+
+//ngbModuleBootstrap
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { FooterComponent } from "./components/shared/footer/footer.component";
+import { ContactanosComponent } from "./components/shared/contactanos/contactanos.component";
+import { ServicesComponent } from "./components/services/services.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +32,10 @@ import { CarouselComponent } from "./components/home/carousel/carousel.component
     AboutComponent,
     ContactComponent,
     ContactTemplateComponent,
-    CarouselComponent
+    CarouselComponent,
+    FooterComponent,
+    ContactanosComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,7 @@ import { CarouselComponent } from "./components/home/carousel/carousel.component
     APP_ROUTING,
     FormsModule,
     HttpClientModule,
-    NgbModule.forRoot()
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
