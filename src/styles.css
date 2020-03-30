@@ -158,3 +158,18 @@ ngb-carousel img {
     transform: translate3d(-50%, 0, 0);
   }
 }
+
+/*Cards Services*/
+
+.card-deck img {
+  align-self: center;
+  align-content: center;
+  align-items: center;
+}
+
+/*
+.card-deck .card {
+  width: 500px;
+  height: 600px;
+}
+ */
