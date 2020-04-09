@@ -229,6 +229,13 @@ ngb-carousel {
   align-items: center;
 }
 
+.card .list-group-item {
+  font-size: 1.2em;
+}
+
+.card-text {
+  font-size: 1.2em;
+}
 /*
 .card-deck .card {
   width: 500px;

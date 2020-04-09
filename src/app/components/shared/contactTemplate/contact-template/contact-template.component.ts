@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { UserModel } from "src/app/models/user.model";
 import { UsersService } from "src/app/services/users.service";
+import { ActivatedRoute } from "@angular/router";
 
 import Swal from "sweetalert2";
 import { Observable } from "rxjs";
@@ -9,20 +10,28 @@ import { Observable } from "rxjs";
 @Component({
   selector: "app-contact-template",
   templateUrl: "./contact-template.component.html",
-  styleUrls: ["./contact-template.component.css"]
+  styleUrls: ["./contact-template.component.css"],
 })
 export class ContactTemplateComponent implements OnInit {
   user: UserModel = new UserModel();
   test: Date = new Date();
   focus;
   focus1;
-  constructor(private usersService: UsersService) {}
+  constructor(
+    private usersService: UsersService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.params.subscribe((params) => {
+      this.user.description = params["id"];
+      console.log(params);
+    });
+  }
 
   ngOnInit() {}
 
   saveContact(formContact: NgForm) {
     if (formContact.invalid) {
-      Object.values(formContact.controls).forEach(control => {
+      Object.values(formContact.controls).forEach((control) => {
         control.markAsTouched();
       });
       return;
@@ -32,7 +41,7 @@ export class ContactTemplateComponent implements OnInit {
       title: "Espere",
       text: "Guardando Información",
       icon: "info",
-      allowOutsideClick: false
+      allowOutsideClick: false,
     });
     Swal.showLoading();
 
@@ -40,11 +49,11 @@ export class ContactTemplateComponent implements OnInit {
 
     peticion = this.usersService.createUser(this.user);
 
-    peticion.subscribe(resp => {
+    peticion.subscribe((resp) => {
       Swal.fire({
         title: this.user.name,
         text: "Se guardo correctamente",
-        icon: "success"
+        icon: "success",
       });
     });
   }
