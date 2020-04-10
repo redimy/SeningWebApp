@@ -117,8 +117,8 @@ ngb-carousel img {
 
 .carousel-caption {
   top: 6em;
-  max-width: 35%;
-  margin-left: -50px;
+  max-width: 100%;
+  margin-left: -100px;
   font-weight: bolder;
   text-align: left;
 }
@@ -324,7 +324,7 @@ ngb-carousel {
   .carousel-caption {
     color: black;
     text-align: center;
-    margin-left: -25px;
+    margin-left: -10px;
     top: 6em;
     max-width: 100%;
   }
