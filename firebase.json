@@ -1,7 +1,27 @@
 {
   "functions": {
-    "predeploy": [
-      "npm --prefix \"$RESOURCE_DIR\" run lint"
+    "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run lint"]
+  },
+  "hosting": {
+    "public": "dist/SeningStudio",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        // Serves index.html for requests to files or directories that do not exist
+        "source": "**",
+        "destination": "/index.html"
+      },
+      {
+        // Serves index.html for requests to both "/foo" and "/foo/**"
+        // Using "/foo/**" only matches paths like "/foo/xyz", but not "/foo"
+        "source": "/foo{,/**}",
+        "destination": "/index.html"
+      },
+      {
+        // Excludes specified pathways from rewrites
+        "source": "!/@(js|css)/**",
+        "destination": "/index.html"
+      }
     ]
   }
 }

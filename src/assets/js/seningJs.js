@@ -6,38 +6,7 @@ var fixedTop = false;
 
 var navbar_initialized = false;
 
-$(document).ready(function() {
-  //SLIDER ABOUT LOGOS
-  if ($(".brands_slider").length) {
-    var brandsSlider = $(".brands_slider");
-
-    brandsSlider.owlCarousel({
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      nav: false,
-      dots: false,
-      autoWidth: true,
-      items: 8,
-      margin: 42
-    });
-
-    if ($(".brands_prev").length) {
-      var prev = $(".brands_prev");
-      prev.on("click", function() {
-        brandsSlider.trigger("prev.owl.carousel");
-      });
-    }
-
-    if ($(".brands_next").length) {
-      var next = $(".brands_next");
-      next.on("click", function() {
-        brandsSlider.trigger("next.owl.carousel");
-      });
-    }
-  }
-  //FIN SLIDER
-
+$(document).ready(function () {
   window_width = $(window).width();
 
   if ($(".tagsinput").length != 0) {
@@ -62,9 +31,9 @@ $(document).ready(function() {
         next: "fa fa-chevron-right",
         today: "fa fa-screenshot",
         clear: "fa fa-trash",
-        close: "fa fa-remove"
+        close: "fa fa-remove",
       },
-      debug: true
+      debug: true,
     });
   }
 
@@ -74,15 +43,11 @@ $(document).ready(function() {
   }
 
   $(".form-control")
-    .on("focus", function() {
-      $(this)
-        .parent(".input-group")
-        .addClass("input-group-focus");
+    .on("focus", function () {
+      $(this).parent(".input-group").addClass("input-group-focus");
     })
-    .on("blur", function() {
-      $(this)
-        .parent(".input-group")
-        .removeClass("input-group-focus");
+    .on("blur", function () {
+      $(this).parent(".input-group").removeClass("input-group-focus");
     });
 
   // Init popovers
@@ -95,28 +60,28 @@ $(document).ready(function() {
   pk.initSliders();
 });
 
-$(document).on("click", ".navbar-toggler", function() {
+$(document).on("click", ".navbar-toggler", function () {
   $toggle = $(this);
   if (pk.misc.navbar_menu_visible == 1) {
     $("html").removeClass("nav-open");
     pk.misc.navbar_menu_visible = 0;
-    setTimeout(function() {
+    setTimeout(function () {
       $toggle.removeClass("toggled");
       $("#bodyClick").remove();
     }, 550);
   } else {
-    setTimeout(function() {
+    setTimeout(function () {
       $toggle.addClass("toggled");
     }, 580);
 
     div = '<div id="bodyClick"></div>';
     $(div)
       .appendTo("body")
-      .click(function() {
+      .click(function () {
         $("html").removeClass("nav-open");
         pk.misc.navbar_menu_visible = 0;
         $("#bodyClick").remove();
-        setTimeout(function() {
+        setTimeout(function () {
           $toggle.removeClass("toggled");
         }, 550);
       });
@@ -128,20 +93,20 @@ $(document).on("click", ".navbar-toggler", function() {
 
 pk = {
   misc: {
-    navbar_menu_visible: 0
+    navbar_menu_visible: 0,
   },
 
-  checkScrollForPresentationPage: debounce(function() {
+  checkScrollForPresentationPage: debounce(function () {
     oVal = $(window).scrollTop() / 3;
     big_image.css({
       transform: "translate3d(0," + oVal + "px,0)",
       "-webkit-transform": "translate3d(0," + oVal + "px,0)",
       "-ms-transform": "translate3d(0," + oVal + "px,0)",
-      "-o-transform": "translate3d(0," + oVal + "px,0)"
+      "-o-transform": "translate3d(0," + oVal + "px,0)",
     });
   }, 4),
 
-  checkScrollForTransparentNavbar: debounce(function() {
+  checkScrollForTransparentNavbar: debounce(function () {
     if ($(document).scrollTop() > $(".navbar").attr("color-on-scroll")) {
       if (transparent) {
         transparent = false;
@@ -155,75 +120,73 @@ pk = {
     }
   }, 17),
 
-  initPopovers: function() {
+  initPopovers: function () {
     if ($('[data-toggle="popover"]').length != 0) {
       $("body").append('<div class="popover-filter"></div>');
 
       //    Activate Popovers
       $('[data-toggle="popover"]')
         .popover()
-        .on("show.bs.popover", function() {
-          $(".popover-filter").click(function() {
+        .on("show.bs.popover", function () {
+          $(".popover-filter").click(function () {
             $(this).removeClass("in");
             $('[data-toggle="popover"]').popover("hide");
           });
           $(".popover-filter").addClass("in");
         })
-        .on("hide.bs.popover", function() {
+        .on("hide.bs.popover", function () {
           $(".popover-filter").removeClass("in");
         });
     }
   },
-  initCollapseArea: function() {
-    $('[data-toggle="pk-collapse"]').each(function() {
+  initCollapseArea: function () {
+    $('[data-toggle="pk-collapse"]').each(function () {
       var thisdiv = $(this).attr("data-target");
       $(thisdiv).addClass("pk-collapse");
     });
 
     $('[data-toggle="pk-collapse"]')
       .hover(
-        function() {
+        function () {
           var thisdiv = $(this).attr("data-target");
           if (!$(this).hasClass("state-open")) {
             $(this).addClass("state-hover");
             $(thisdiv).css({
-              height: "30px"
+              height: "30px",
             });
           }
         },
-        function() {
+        function () {
           var thisdiv = $(this).attr("data-target");
           $(this).removeClass("state-hover");
 
           if (!$(this).hasClass("state-open")) {
             $(thisdiv).css({
-              height: "0px"
+              height: "0px",
             });
           }
         }
       )
-      .click(function(event) {
+      .click(function (event) {
         event.preventDefault();
 
         var thisdiv = $(this).attr("data-target");
-        var height = $(thisdiv)
-          .children(".panel-body")
-          .height();
+        var height = $(thisdiv).children(".panel-body").height();
 
         if ($(this).hasClass("state-open")) {
           $(thisdiv).css({
-            height: "0px"
+            height: "0px",
           });
           $(this).removeClass("state-open");
         } else {
           $(thisdiv).css({
-            height: height + 30
+            height: height + 30,
           });
           $(this).addClass("state-open");
         }
       });
   },
-  initSliders: function() {
+  initSliders: function () {
     // Sliders for demo purpose in refine cards section
     if ($("#sliderRegular").length != 0) {
       var rangeSlider = document.getElementById("sliderRegular");
@@ -231,8 +194,8 @@ pk = {
         start: [5000],
         range: {
           min: [2000],
-          max: [10000]
-        }
+          max: [10000],
+        },
       });
     }
     if ($("#sliderDouble").length != 0) {
@@ -242,20 +205,20 @@ pk = {
         connect: true,
         range: {
           min: 0,
-          max: 100
-        }
+          max: 100,
+        },
       });
     }
-  }
+  },
 };
 
 examples = {
-  initContactUsMap: function() {
+  initContactUsMap: function () {
     var myLatlng = new google.maps.LatLng(44.43353, 26.093928);
     var mapOptions = {
       zoom: 14,
       center: myLatlng,
-      scrollwheel: false //we disable de scroll over the map, it is a really annoing when you scroll through page
+      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
     };
     var map = new google.maps.Map(
       document.getElementById("contactUsMap"),
@@ -264,12 +227,12 @@ examples = {
 
     var marker = new google.maps.Marker({
       position: myLatlng,
-      title: "Hello World!"
+      title: "Hello World!",
     });
 
     // To add the marker to the map, call setMap();
     marker.setMap(map);
-  }
+  },
 };
 
 // Returns a function, that, as long as it continues to be invoked, will not
@@ -279,11 +242,11 @@ examples = {
 
 function debounce(func, wait, immediate) {
   var timeout;
-  return function() {
+  return function () {
     var context = this,
       args = arguments;
     clearTimeout(timeout);
-    timeout = setTimeout(function() {
+    timeout = setTimeout(function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     }, wait);

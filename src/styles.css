@@ -107,10 +107,8 @@ ngb-carousel img {
   background-position: center center;
   background-size: cover;
   min-height: 100vh;
-  max-height: 999px;
   overflow: hidden;
   position: relative;
-  width: 100%;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -121,12 +119,18 @@ ngb-carousel img {
   top: 6em;
   max-width: 35%;
   margin-left: -50px;
+  font-weight: bolder;
+  text-align: left;
 }
 ngb-carousel {
   padding: 0;
   margin: 0;
-  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 999px;
   background-color: white;
+  position: fixed;
+  z-index: 0;
 }
 
 /*Pulsing Heart (footer)*/
@@ -307,4 +311,24 @@ ngb-carousel {
 .brands_next {
   right: 40px;
 }
-/**/
+/*RESPONSIVE */
+@media screen and (max-width: 640px) {
+  .main {
+    text-align: center;
+  }
+  ngb-carousel img {
+    min-width: 200%;
+    min-height: 100vh;
+  }
+
+  .carousel-caption {
+    color: black;
+    text-align: center;
+    margin-left: -25px;
+    top: 6em;
+    max-width: 100%;
+  }
+  .h4Large {
+    visibility: hidden;
+  }
+}

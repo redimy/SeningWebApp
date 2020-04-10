@@ -24,6 +24,8 @@ import { FooterComponent } from "./components/shared/footer/footer.component";
 import { ContactanosComponent } from "./components/shared/contactanos/contactanos.component";
 import { ServicesComponent } from "./components/services/services.component";
 
+//Externals
+import { NgxSpinnerModule } from "ngx-spinner";
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,7 @@ import { ServicesComponent } from "./components/services/services.component";
     CarouselComponent,
     FooterComponent,
     ContactanosComponent,
-    ServicesComponent
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,9 +45,10 @@ import { ServicesComponent } from "./components/services/services.component";
     APP_ROUTING,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxSpinnerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
