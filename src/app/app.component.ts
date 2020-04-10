@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { PLATFORM_ID, APP_ID, Inject } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
+import { Meta } from "@angular/platform-browser";
 
 import { NgxSpinnerService } from "ngx-spinner";
-import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 import {
   Event,
   NavigationCancel,
@@ -19,14 +19,14 @@ import {
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  title = "Sening Studio";
   loading = false;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(APP_ID) private appId: string,
     private spinnerService: NgxSpinnerService,
-    private router: Router
+    private router: Router,
+    private metaTagService: Meta
   ) {
     /*    this.router.events.subscribe((event: Event) => {
       switch (true) {
@@ -52,6 +52,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.metaTagService.addTags([
+      {
+        name: "keywords",
+        content:
+          "Desarrollo web, Aplicaciones Móviles, Diseño Web, Paginas Web, Software a Medida, Administrador de Contenidos CMS",
+      },
+      { name: "robots", content: "index, follow" },
+      { name: "author", content: "Sening Studio" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { charset: "UTF-8" },
+    ]);
     this.spinner();
   }
 

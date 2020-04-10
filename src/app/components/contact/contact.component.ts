@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Title, Meta } from "@angular/platform-browser";
 
 @Component({
   selector: "app-contact",
@@ -10,7 +11,17 @@ export class ContactComponent implements OnInit {
   focus;
   focus1;
 
-  constructor() {}
+  title =
+    "Diseñamos y Desarrollamos su Página Web, App Móvil y Software  - Sening Studio";
 
-  ngOnInit() {}
+  constructor(private titleService: Title, private metaTagService: Meta) {}
+
+  ngOnInit() {
+    this.titleService.setTitle(this.title);
+    this.metaTagService.updateTag({
+      name: "description",
+      content:
+        "Nos encantaria ayudarte en el diseño y programación de tu software, página web , aplicacion móvil o cualquiera que sea la meta de tu negocio.",
+    });
+  }
 }
