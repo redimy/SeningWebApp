@@ -22,6 +22,28 @@
         "source": "!/@(js|css)/**",
         "destination": "/index.html"
       }
+    ], // Add the "headers" attribute within "hosting"
+    "headers": [
+      {
+        // Specifies a CORS header for all font files
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        // Overrides the default 1 hour browser cache with a 2 hour cache for all image files
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      }
     ]
   }
 }

@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Montserrat-Light;
+  src: url(assets/fonts/Montserrat/Montserrat-Light.ttf) format("opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(assets/fonts/Montserrat/Montserrat-Regular.ttf) format("opentype");
+}
+
+/* * {
+  font-family: "Montserrat-Light", "Helvetica", Arial, sans-serif;
+}
+ */
 .main-container {
   min-height: 100%;
   min-width: 100%;

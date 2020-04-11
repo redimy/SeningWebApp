@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { charset: "UTF-8" },
     ]);
-    this.spinner();
+    // this.spinner();
   }
 
   spinner(): void {
