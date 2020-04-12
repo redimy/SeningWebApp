@@ -23,7 +23,7 @@ export class ContactTemplateComponent implements OnInit {
   ) {
     this.activatedRoute.params.subscribe((params) => {
       this.user.description = params["id"];
-      console.log(params);
+      // console.log(params);
     });
   }
 
@@ -52,7 +52,7 @@ export class ContactTemplateComponent implements OnInit {
     peticion.subscribe((resp) => {
       Swal.fire({
         title: this.user.name,
-        text: "Se guardo correctamente",
+        text: "Mensaje Enviado.",
         icon: "success",
       });
     });

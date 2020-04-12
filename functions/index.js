@@ -33,9 +33,9 @@ exports.sendEmailNotification = functions.database
 
     authData
       .sendMail({
-        from: "granadosdimitri7@gmail.com",
+        from: "SeningStudio.com",
         to: `${data.email}`,
-        subject: "Contacto - Sening Studio",
+        subject: "Contacto - Sening Studio ",
         text: `${data.email} - Nos gustaria saber un poco mas sobre tu proyecto y un horario en el que te podamos contactar -- Sening Studio`,
         html:
           `Buen dia ${data.name},<br> nos gustaria saber un poco mas sobre tu proyecto y un horario en el que te podamos contactar, saludos. <br>` +

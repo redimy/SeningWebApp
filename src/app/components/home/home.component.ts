@@ -8,7 +8,7 @@ import { Title, Meta } from "@angular/platform-browser";
 })
 export class HomeComponent implements OnInit {
   title =
-    "Desarrollo Web, Aplicaciones Móviles, Diseño de Paginas Web, Software en Monterrey,México";
+    "Desarrollo Web, Aplicaciones Móviles, Diseño de Paginas Web, Software en Monterrey, México";
 
   constructor(private titleService: Title, private metaTagService: Meta) {}
 
