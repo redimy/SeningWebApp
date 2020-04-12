@@ -2,12 +2,12 @@ import { Component, OnInit, ElementRef } from "@angular/core";
 import {
   Location,
   LocationStrategy,
-  PathLocationStrategy
+  PathLocationStrategy,
 } from "@angular/common";
 
 @Component({
   selector: "app-navbar",
-  templateUrl: "./navbar.component.html"
+  templateUrl: "./navbar.component.html",
 })
 export class NavbarComponent implements OnInit {
   private toggleButton: any;
@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
     const toggleButton = this.toggleButton;
     const html = document.getElementsByTagName("html")[0];
 
-    setTimeout(function() {
+    setTimeout(function () {
       toggleButton.classList.add("toggled");
     }, 500);
     html.classList.add("nav-open");
