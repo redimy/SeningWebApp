@@ -35,10 +35,11 @@ exports.sendEmailNotification = functions.database
       .sendMail({
         from: "granadosdimitri7@gmail.com",
         to: `${data.email}`,
-        subject: "Sening Studio",
-        text: `${data.email} - Sening Studio`,
+        subject: "Contacto - Sening Studio",
+        text: `${data.email} - Nos gustaria saber un poco mas sobre tu proyecto y un horario en el que te podamos contactar -- Sening Studio`,
         html:
-          "<b>Buen dia, en breve nos comunicaremos con usted para recibir mas información sobre su proyecto.</b>",
+          `Buen dia ${data.name},<br> nos gustaria saber un poco mas sobre tu proyecto y un horario en el que te podamos contactar, saludos. <br>` +
+          "<b>Llevemos su proyecto al siguiente nivel.</b>",
       })
       .then((res) => console.log("successfully sent that mail"))
       .catch((err) => console.log(err));
