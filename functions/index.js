@@ -27,18 +27,19 @@ exports.sendEmailNotification = functions.database
       secure: true,
       auth: {
         user: SENDER_EMAIL,
-        pass: SENDER_PASSWORD
-      }
+        pass: SENDER_PASSWORD,
+      },
     });
 
     authData
       .sendMail({
         from: "granadosdimitri7@gmail.com",
         to: `${data.email}`,
-        subject: "SeningStudio",
-        text: `${data.email} - Hola mundo`,
-        html: "<b>Sening Studio represent hiphop </b>"
+        subject: "Sening Studio",
+        text: `${data.email} - Sening Studio`,
+        html:
+          "<b>Buen dia, en breve nos comunicaremos con usted para recibir mas información sobre su proyecto.</b>",
       })
-      .then(res => console.log("successfully sent that mail"))
-      .catch(err => console.log(err));
+      .then((res) => console.log("successfully sent that mail"))
+      .catch((err) => console.log(err));
   });
