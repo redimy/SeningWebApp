@@ -12,6 +12,7 @@ import {
   NavigationStart,
   Router,
 } from "@angular/router";
+import { SEOService } from "./services/seo.service";
 
 @Component({
   selector: "app-root",
@@ -26,7 +27,8 @@ export class AppComponent implements OnInit {
     @Inject(APP_ID) private appId: string,
     private spinnerService: NgxSpinnerService,
     private router: Router,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    private seoService: SEOService
   ) {
     /*    this.router.events.subscribe((event: Event) => {
       switch (true) {
@@ -64,8 +66,13 @@ export class AppComponent implements OnInit {
       { charset: "UTF-8" },
     ]);
     // this.spinner();
+
+    this.createLinkForCanonicalURL();
   }
 
+  createLinkForCanonicalURL() {
+    this.seoService.createLinkForCanonicalURL();
+  }
   spinner(): void {
     this.spinnerService.show();
     setTimeout(() => {
