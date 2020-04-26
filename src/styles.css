@@ -130,12 +130,13 @@ ngb-carousel img {
 }
 
 .carousel-caption {
-  top: 6em;
-  max-width: 100%;
-  margin-left: -100px;
+  position: relative;
+  top: 15%;
   font-weight: bolder;
-  text-align: left;
+  margin-right: 52%;
+  margin-left: -12%;
 }
+
 ngb-carousel {
   padding: 0;
   margin: 0;
@@ -185,8 +186,7 @@ ngb-carousel {
 }
 .navbar {
   color: white;
-  /*   height: 70px;
- */
+  height: 70px;
 }
 
 /*contactanos card*/
@@ -325,24 +325,250 @@ ngb-carousel {
 .brands_next {
   right: 40px;
 }
+
 /*RESPONSIVE */
-@media screen and (max-width: 640px) {
+
+/*iphone 5 / SE*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
   .main {
     text-align: center;
   }
   ngb-carousel img {
-    min-width: 200%;
+    object-position: center center;
+    object-fit: cover;
     min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .carousel-caption {
+    position: relative;
+    top: 6%;
+    font-weight: bolder;
+    margin-right: -10%;
+    margin-left: -6%;
+  }
+  #carr1 {
+    color: #9a9a9a;
+  }
+  #carr1 h2 {
+    color: #333333;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  .main {
+    text-align: center;
+  }
+  ngb-carousel img {
+    object-position: center center;
+    object-fit: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  #carr1 {
+    color: #333333;
+  }
+}
+/**/
+
+/*iphone 6 7 8, plus y x */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  .main {
+    text-align: center;
+  }
+  ngb-carousel img {
+    object-position: center center;
+    object-fit: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
   }
 
   .carousel-caption {
-    color: black;
-    text-align: center;
-    margin-left: -10px;
-    top: 6em;
-    max-width: 100%;
+    position: relative;
+    top: 6%;
+    font-weight: bolder;
+    margin-right: -10%;
+    margin-left: -6%;
+    font-size: 1.2em;
   }
-  .h4Large {
-    visibility: hidden;
+  #carr1 {
+    color: #9a9a9a;
+  }
+  #carr1 h2 {
+    color: #333333;
+  }
+  .navbar {
+    margin-top: -5%;
   }
 }
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+  .main {
+    text-align: center;
+  }
+  ngb-carousel img {
+    object-position: center center;
+    object-fit: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  .carousel-caption {
+    position: relative;
+    top: 6%;
+    font-weight: bolder;
+    margin-right: 30%;
+    margin-left: -10%;
+    font-size: 0.8em;
+  }
+
+  #carr1 {
+    color: #333333;
+  }
+  .carousel-caption2 {
+    margin-right: 0%;
+  }
+  .navbar {
+    margin-top: -5%;
+  }
+}
+/**/
+
+/*ipad*/
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  ngb-carousel img {
+    object-position: center center;
+    object-fit: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .carousel-caption {
+    position: relative;
+    top: 5%;
+    font-weight: bolder;
+    margin-right: -10%;
+    margin-left: -5%;
+    font-size: 1.4em;
+  }
+  #carr1 h5 {
+    color: #333333;
+  }
+  .navbar {
+    margin-top: -5%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  ngb-carousel img {
+    object-position: center center;
+    object-fit: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .carousel-caption {
+    position: relative;
+    top: 5%;
+    font-weight: bolder;
+    margin-right: -10%;
+    margin-left: -5%;
+  }
+
+  #carr1 {
+    color: #333333;
+  }
+}
+/**/
+
+/*ipad pro*/
+@media screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+  ngb-carousel img {
+    object-position: center center;
+    object-fit: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .carousel-caption {
+    position: relative;
+    top: 6%;
+    font-weight: bolder;
+    margin-right: -10%;
+    margin-left: -3%;
+    font-size: 1.8em;
+  }
+  #carr1 h5 {
+    color: #333333;
+  }
+  .navbar {
+    margin-top: 0;
+  }
+}
+@media screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
+  ngb-carousel img {
+    object-position: center center;
+    object-fit: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .carousel-caption2 {
+    margin-right: 20%;
+  }
+  #carr1 h5 {
+    color: #333333;
+  }
+}
+/**/

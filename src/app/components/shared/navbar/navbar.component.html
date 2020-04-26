@@ -39,6 +39,7 @@
               data-placement="bottom"
               href="https://www.facebook.com/Sening-Studio-103307611352104/"
               target="_blank"
+              (click)="sidebarClose()"
             >
               <i class="fa fa-facebook-square"></i>
               <p class="d-lg-none">Facebook</p>
@@ -52,26 +53,45 @@
               data-placement="bottom"
               href="#"
               target="_blank"
+              (click)="sidebarClose()"
             >
               <i class="fa fa-instagram"></i>
               <p class="d-lg-none">Instagram</p>
             </a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['home']">
+            <a
+              class="nav-link"
+              [routerLink]="['home']"
+              (click)="sidebarClose()"
+            >
               Home
             </a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['services']">
+            <a
+              class="nav-link"
+              [routerLink]="['services']"
+              (click)="sidebarClose()"
+            >
               Services
             </a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['contact']">Contact</a>
+            <a
+              class="nav-link"
+              [routerLink]="['contact']"
+              (click)="sidebarClose()"
+              >Contact</a
+            >
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['about']">About</a>
+            <a
+              class="nav-link"
+              [routerLink]="['about']"
+              (click)="sidebarClose()"
+              >About</a
+            >
           </li>
         </ul>
       </div>
