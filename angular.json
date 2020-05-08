@@ -30,8 +30,8 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./src/assets/js/seningJs.js",
-              "./node_modules/popper.js/dist/umd/popper.min.js"
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./src/assets/js/seningJs.js"
             ]
           },
           "configurations": {

@@ -359,6 +359,9 @@ ngb-carousel {
   #carr1 h2 {
     color: #333333;
   }
+  .navbar {
+    margin-top: -5%;
+  }
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
@@ -487,9 +490,6 @@ ngb-carousel {
   #carr1 h5 {
     color: #333333;
   }
-  .navbar {
-    margin-top: -5%;
-  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
@@ -516,6 +516,9 @@ ngb-carousel {
 
   #carr1 {
     color: #333333;
+  }
+  .navbar {
+    height: 120px;
   }
 }
 /**/
@@ -545,9 +548,6 @@ ngb-carousel {
   }
   #carr1 h5 {
     color: #333333;
-  }
-  .navbar {
-    margin-top: 0;
   }
 }
 @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
