@@ -33,13 +33,20 @@ exports.sendEmailNotification = functions.database
 
     authData
       .sendMail({
-        from: "SeningStudio.com",
+        from: '"Sening Studio" <contacto@seningstudio.com>',
         to: `${data.email}`,
         subject: "Contacto - Sening Studio ",
         text: `${data.email} - Nos gustaria saber un poco mas sobre tu proyecto y un horario en el que te podamos contactar -- Sening Studio`,
+        attachments: [
+          {
+            filename: "Firma.jpg",
+            path: "./Firma.jpg",
+            cid: "firma",
+          },
+        ],
         html:
-          `Buen dia ${data.name},<br> nos gustaria saber un poco mas sobre tu proyecto y un horario en el que te podamos contactar, saludos. <br>` +
-          "<b>Llevemos su proyecto al siguiente nivel.</b>",
+          `Buen dia ${data.name},<br><br> Nos gustaria saber un poco mas sobre su proyecto y un horario en el que te podamos contactar, saludos. <br>` +
+          "<b>Llevemos su proyecto al siguiente nivel.</b> <br><br> <img src='cid:firma' width='100%' height='auto'>",
       })
       .then((res) => console.log("successfully sent that mail"))
       .catch((err) => console.log(err));
